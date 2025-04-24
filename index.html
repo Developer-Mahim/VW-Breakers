@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VW Breakers | Volkswagen Parts Specialists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #003366;  /* Darker, more sophisticated blue */
+            --secondary-color: #FFCC00;
+            --accent-color: #CC0000;
+            --light-color: #F8F8F8;      /* Slightly warmer light gray */
+            --dark-color: #222222;       /* Very dark gray, almost black */
+            --text-color: #444444;       /* Slightly darker text */
+            --text-light: #888888;       /* Lighter shade of gray */
+            --transition: all 0.3s ease;
+            --border-radius: 0.75rem;  /* More rounded corners */
+            --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+            --font-family-base: 'Montserrat', sans-serif; /* Using Montserrat */
+            --font-family-heading: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            line-height: 1.8;      /* Increased line height for better readability */
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem; /* Slightly increased horizontal padding */
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.8rem 1.75rem; /* Slightly increased padding */
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            font-size: 1.1rem; /* Increased font size */
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-0.25rem);
+            box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0c808;
+            color: var(--dark-color);
+            transform: translateY(-0.25rem);
+            box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.15);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 0; /* Slightly increased vertical padding */
+            font-size: 0.9rem;  /* Slightly larger font */
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;      /* Increased gap */
+        }
+
+        .contact-info a {
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;  /* Increased gap */
+            font-weight: 500; /* Medium font weight */
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.25rem;    /* Increased gap */
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .main-header {
+            padding: 1.25rem 0;  /* Increased vertical padding */
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;      /* Increased gap */
+        }
+
+        .logo img {
+            height: 3.5rem;    /* Slightly larger logo */
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img{
+           transform: scale(1.05);
+        }
+
+        .logo-text h1 {
+            font-size: 1.85rem;  /* Larger font size */
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;  /* Increased margin */
+            font-family: var(--font-family-heading);
+            font-weight: 700; /* Use 700 font weight */
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;      /* Increased gap */
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            font-weight: 600;  /* Stronger font weight */
+            padding: 0.5rem 0;    /* Increased vertical padding */
+            position: relative;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -0.25rem; /* Increased distance */
+            left: 0;
+            width: 0;
+            height: 0.1875rem;  /* Increased height */
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+       nav ul li a:hover{
+          color: var(--primary-color);
+       }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;    /* Larger icon */
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;  /* Increased vertical padding */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;      /* Larger font size */
+            margin-bottom: 1.5rem;  /* Increased margin */
+            font-weight: 700;    /* Stronger font weight */
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;    /* Larger font size */
+            max-width: 750px;    /* Increased max width */
+            margin: 0 auto 2.5rem;  /* Increased margin */
+            line-height: 1.9;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.25rem;    /* Increased gap */
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Search Section */
+        .search-section {
+            background-color: white;
+            padding: 2.5rem;    /* Increased padding */
+            margin-top: -4rem;  /* Increased negative margin */
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-section h3 {
+            text-align: center;
+            margin-bottom: 2rem;    /* Increased margin */
+            color: var(--primary-color);
+            font-size: 1.85rem;  /* Larger font size */
+            font-weight: 700;    /* Stronger font weight */
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Increased min width */
+            gap: 1.25rem;      /* Increased gap */
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;  /* Increased margin */
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;  /* Increased margin */
+            font-weight: 600;    /* Stronger font weight */
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;      /* Increased padding */
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;    /* Increased font size */
+            transition: var(--transition);
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 72, 136, 0.15);
+        }
+
+        .search-btn {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;    /* Increased margin */
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;    /* Increased padding */
+            background-color: var(--light-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;  /* Increased margin */
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;    /* Larger font size */
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;  /* Increased margin */
+            position: relative;
+            display: inline-block;
+            font-weight: 700;    /* Stronger font weight */
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem;  /* Increased distance */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5rem;      /* Increased width */
+            height: 0.25rem;
+            background-color: var(--accent-color);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 750px;    /* Increased max width */
+            margin: 0 auto;
+            font-size: 1.1rem;  /* Increased font size */
+            line-height: 1.9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased min width */
+            gap: 2.5rem;      /* Increased gap */
+            margin-top: 1.5rem;    /* Increased margin */
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1); /* Increased shadow */
+        }
+
+        .service-img {
+            height: 15rem;    /* Increased height */
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;      /* Increased padding */
+        }
+
+        .service-content h3 {
+            margin-bottom: 1.25rem;  /* Increased margin */
+            color: var(--primary-color);
+            font-size: 1.5rem;    /* Larger font size */
+            font-weight: 600;
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .service-content p {
+            margin-bottom: 1.25rem;  /* Increased margin */
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .service-content a{
+            font-size: 1.1rem;
+        }
+
+        /* Featured Parts */
+        .featured-parts {
+            padding: 5rem 0;    /* Increased padding */
+            background-color: var(--light-color);
+        }
+
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min width */
+            gap: 2.5rem;      /* Increased gap */
+            margin-top: 1.5rem;    /* Increased margin */
+        }
+
+        .part-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .part-card:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+        }
+
+        .part-img {
+            height: 15rem;    /* Increased height */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .part-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+       .part-card:hover .part-img img{
+          transform: scale(1.05);
+       }
+
+        .part-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.75rem;
+            border-radius: var(--border-radius);
+            font-size: 0.85rem;  /* Increased font size */
+            font-weight: bold;
+        }
+
+        .part-content {
+            padding: 2rem;      /* Increased padding */
+        }
+
+        .part-content h3 {
+            margin-bottom: 1rem;    /* Increased margin */
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .part-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;  /* Increased margin */
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .part-price {
+            font-size: 1.5rem;    /* Increased font size */
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;  /* Increased margin */
+        }
+
+        .part-btns {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;      /* Increased gap */
+        }
+
+        .part-btns .btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;    /* Increased padding */
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;        /* Increased gap */
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .about-img:hover img{
+           transform: scale(1.05)
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;    /* Larger font size */
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;  /* Increased margin */
+            font-weight: 700;
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .about-text p {
+            margin-bottom: 1.25rem;  /* Increased margin */
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .about-features {
+            margin-top: 2.5rem;    /* Increased margin */
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;    /* Increased gap */
+            margin-bottom: 1.25rem;  /* Increased margin */
+        }
+
+        .feature-icon {
+            color: var(--accent-color);
+            font-size: 2rem;    /* Larger icon */
+            margin-top: 0.25rem;
+        }
+
+        .feature-item h4 {
+            margin-bottom: 0.5rem;  /* Increased margin */
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-color);
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;    /* Increased padding */
+            background-color: var(--light-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;  /* Increased margin */
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;    /* Larger font size */
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;  /* Increased margin */
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem;  /* Increased distance */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5rem;      /* Increased width */
+            height: 0.25rem;
+            background-color: var(--accent-color);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 750px;    /* Increased max width */
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased min width */
+            gap: 2.5rem;      /* Increased gap */
+            margin-top: 1.5rem;    /* Increased margin */
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;      /* Increased padding */
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 1.5rem;    /* Increased distance */
+            left: 1.5rem;    /* Increased distance */
+            font-size: 4rem;    /* Larger font size */
+            color: rgba(0, 0, 0, 0.05);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;  /* Increased margin */
+            font-style: italic;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;    /* Increased gap */
+        }
+
+        .author-img {
+            width: 3.5rem;    /* Increased size */
+            height: 3.5rem;    /* Increased size */
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-color);
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Call to Action */
+        .cta {
+            padding: 5rem 0;    /* Increased padding */
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-top: 4rem;
+        }
+
+        .cta h2 {
+            font-size: 3rem;    /* Larger font size */
+            margin-bottom: 1.5rem;  /* Increased margin */
+            font-weight: 700;
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .cta p {
+            max-width: 800px;    /* Increased max width */
+            margin: 0 auto 2.5rem;  /* Increased margin */
+            font-size: 1.25rem;
+            opacity: 0.9;
+            line-height: 1.9;
+        }
+       .cta .btn{
+          font-size: 1.2rem;
+          padding: 1rem 2rem;
+       }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min width */
+            gap: 2.5rem;      /* Increased gap */
+            margin-bottom: 2.5rem;    /* Increased margin */
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;    /* Larger font size */
+            margin-bottom: 1.5rem;  /* Increased margin */
+            position: relative;
+            padding-bottom: 0.75rem;
+            font-weight: 600;
+            font-family: var(--font-family-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 3rem;      /* Increased width */
+            height: 0.1875rem;  /* Increased height */
+            background-color: var(--accent-color);
+        }
+
+        .footer-column p {
+            margin-bottom: 1.25rem;  /* Increased margin */
+            opacity: 0.8;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 0.25rem;
+        }
+
+        .contact-info-footer {
+            margin-bottom: 1.25rem;  /* Increased margin */
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .contact-info-footer i {
+            margin-top: 0.25rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem 0;    /* Increased padding */
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                order: -1;
+            }
+             .search-form{
+                grid-template-columns: 1fr;
+             }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 5rem;      /* Increased top */
+                left: -100%;
+                width: 90%;      /* Increased width */
+                height: calc(100vh - 5rem);  /* Adjusted height */
+                background-color: white;
+                box-shadow: var(--box-shadow);
+                transition: var(--transition);
+                z-index: 99;
+                padding: 2rem;
+                overflow-y: auto;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1.25rem;    /* Increased gap */
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+             .header-content{
+                flex-direction: column;
+                text-align: center;
+             }
+             .logo-text{
+                text-align: center;
+             }
+        }
+
+        @media (max-width: 576px) {
+            .top-bar .container {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .hero {
+                padding: 5rem 0;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .search-section {
+                padding: 1.5rem;
+            }
+
+            .search-form {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .part-btns {
+                flex-direction: column;
+            }
+            .part-btns .btn{
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="tel:+441234567890"><i class="fas fa-phone"></i> 01234 567890</a>
+                    <a href="mailto:info@vwbreakers.co.uk"><i class="fas fa-envelope"></i> info@vwbreakers.co.uk</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="VW Breakers Logo">
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <nav id="mainNav">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Parts</a></li>
+                            <li><a href="#">Vehicles</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Quality Volkswagen Parts at Affordable Prices</h2>
+            <p>We specialize in breaking Volkswagen vehicles and supplying high-quality used parts with warranty across the UK.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn">Browse Parts</a>
+                <a href="#" class="btn btn-secondary">Sell Your Vehicle</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="search-section">
+            <h3>Find Your Part</h3>
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="make">Make</label>
+                    <select id="make" name="make">
+                        <option value="">Select Make</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="audi">Audi</option>
+                        <option value="seat">SEAT</option>
+                        <option value="skoda">Škoda</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <select id="model" name="model">
+                        <option value="">Select Model</option>
+                        <option value="golf">Golf</option>
+                        <option value="polo">Polo</option>
+                        <option value="passat">Passat</option>
+                        <option value="tiguan">Tiguan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <select id="year" name="year">
+                        <option value="">Select Year</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="part">Part Name/Number</label>
+                    <input type="text" id="part" name="part" placeholder="e.g. BCM or 1K0907063">
+                </div>
+                <div class="search-btn">
+                    <button type="submit" class="btn">Search Parts</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a range of services to meet all your Volkswagen parts needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Parts Breaking">
+                    </div>
+                    <div class="service-content">
+                        <h3>Parts Breaking</h3>
+                        <p>We professionally break a wide range of Volkswagen vehicles to provide high-quality used parts.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Parts Delivery">
+                    </div>
+                    <div class="service-content">
+                        <h3>UK Delivery</h3>
+                        <p>We offer fast and reliable delivery services across the UK for all your parts needs.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Vehicle Collection">
+                    </div>
+                    <div class="service-content">
+                        <h3>Vehicle Collection</h3>
+                        <p>We offer free collection services for your end-of-life Volkswagen vehicles across the UK.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-parts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Parts</h2>
+                <p>Check out some of our most popular Volkswagen parts in stock</p>
+            </div>
+            <div class="parts-grid">
+                <div class="part-card">
+                    <div class="part-img">
+                        <img src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="VW Golf Engine">
+                        <span class="part-tag">In Stock</span>
+                    </div>
+                    <div class="part-content">
+                        <h3>2.0 TDI Engine</h3>
+                        <div class="part-meta">
+                            <span>Golf MK7</span>
+                            <span>2015-2020</span>
+                        </div>
+                        <div class="part-price">£1,250</div>
+                        <div class="part-btns">
+                            <a href="#" class="btn">View Details</a>
+                            <a href="#" class="btn btn-secondary">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="part-card">
+                    <div class="part-img">
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="VW Gearbox">
+                        <span class="part-tag">In Stock</span>
+                    </div>
+                    <div class="part-content">
+                        <h3>DSG Gearbox</h3>
+                        <div class="part-meta">
+                            <span>Passat B8</span>
+                            <span>2014-2019</span>
+                        </div>
+                        <div class="part-price">£950</div>
+                        <div class="part-btns">
+                            <a href="#" class="btn">View Details</a>
+                            <a href="#" class="btn btn-secondary">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="part-card">
+                    <div class="part-img">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="VW Alloy Wheels">
+                        <span class="part-tag">In Stock</span>
+                    </div>
+                    <div class="part-content">
+                        <h3>18" Santiago Alloys</h3>
+                        <div class="part-meta">
+                            <span>Golf MK7.5</span>
+                            <span>2017-2020</span>
+                        </div>
+                        <div class="part-price">£450</div>
+                        <div class="part-btns">
+                            <a href="#" class="btn">View Details</a>
+                            <a href="#" class="btn btn-secondary">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="part-card">
+                    <div class="part-img">
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="VW Headlights">
+                        <span class="part-tag">In Stock</span>
+                    </div>
+                    <div class="part-content">
+                        <h3>LED Headlights</h3>
+                        <div class="part-meta">
+                            <span>Tiguan</span>
+                            <span>2016-2020</span>
+                        </div>
+                        <div class="part-price">£350</div>
+                        <div class="part-btns">
+                            <a href="#" class="btn">View Details</a>
+                            <a href="#" class="btn btn-secondary">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About VW Breakers</h2>
+                    <p>VW Breakers is a family-run business with over 20 years of experience in the Volkswagen parts industry. We specialize in breaking Volkswagen Group vehicles including Volkswagen, Audi, SEAT, and Škoda.</p>
+                    <p>Our team of experts carefully dismantle each vehicle to ensure the highest quality parts are available to our customers. All parts come with a warranty for your peace of mind.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Quality Parts</h4>
+                                <p>All parts are tested and come with a warranty</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div>
+                                <h4>Fast Delivery</h4>
+                                <p>UK-wide delivery with next day options</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-pound-sign"></i>
+                            </div>
+                            <div>
+                                <h4>Competitive Prices</h4>
+                                <p>Save up to 70% compared to new parts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="VW Breakers Yard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Testimonials</h2>
+                <p>What our customers say about our services</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>I needed a replacement engine for my Golf and VW Breakers had exactly what I needed at a fraction of the dealer price. The engine was delivered quickly and has been running perfectly for months now.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David M.">
+                        </div>
+                        <div class="author-info">
+                            <h4>David M.</h4>
+                            <p>Golf Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Excellent service from start to finish. The team helped me find the right part for my Passat and even provided fitting instructions. Will definitely use them again for any VW parts I need.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah K.</h4>
+                            <p>Passat Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>As a mechanic, I regularly source parts from VW Breakers for my customers. Their parts are always in good condition and their customer service is second to none. Highly recommended!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="James T.">
+                        </div>
+                        <div class="author-info">
+                            <h4>James T.</h4>
+                            <p>Mechanic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Need a Volkswagen Part?</h2>
+            <p>Contact us today to check availability or to enquire about selling your Volkswagen vehicle for breaking.</p>
+            <a href="#" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>VW Breakers is a specialist Volkswagen parts supplier with years of experience in the industry. We provide quality used parts at affordable prices.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Parts Search</a></li>
+                        <li><a href="#">Vehicles in Stock</a></li>
+                        <li><a href="#">Sell Your Vehicle</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info-footer">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Breaker Yard, Industrial Estate, Town, AB12 3CD</p>
+                    </div>
+                    <div class="contact-info-footer">
+                        <i class="fas fa-phone"></i>
+                        <p>01234 567890</p>
+                    </div>
+                    <div class="contact-info-footer">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@vwbreakers.co.uk</p>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 8:30am - 5:30pm</p>
+                    <p>Saturday: 9:00am - 2:00pm</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 VW Breakers. All Rights Reserved. | Designed by Md. Mahim Hasan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+
+        // Form Validation
+        const searchForm = document.querySelector('.search-form');
+        if (searchForm) {
+            searchForm.addEventListener('submit', (e) => {
+                const make = document.getElementById('make');
+                const model = document.getElementById('model');
+                const part = document.getElementById('part');
+
+                if (!make.value && !model.value && !part.value) {
+                    e.preventDefault();
+                    alert('Please select at least one search criteria (make, model, or part name/number)');
+                    make.focus();
+                }
+            });
+        }
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Current Year for Footer
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.querySelector('.footer-bottom p');
+            if (yearSpan) {
+                const currentYear = new Date().getFullYear();
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2023', currentYear);
+            }
+        });
+    </script>
+</body>
+</html>
